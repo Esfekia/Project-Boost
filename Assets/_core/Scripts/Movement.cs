@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
+    public AudioSource thrustSound;
     public Rigidbody rigidBody;
     public float mainThrust = 500.0f;
     public float rotationValue = 50.0f;
@@ -25,8 +26,15 @@ public class Movement : MonoBehaviour
         if (Input.GetKey(KeyCode.Space))
         {
             rigidBody.AddRelativeForce(Vector3.up * mainThrust * Time.deltaTime);
+            if (!thrustSound.isPlaying)
+            {
+                thrustSound.Play();                
+            }
         }
-
+        else
+        {
+            thrustSound.Stop();
+        }
     }
 
     private void ProcessRotation()
