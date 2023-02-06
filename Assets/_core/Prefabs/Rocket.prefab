@@ -11,8 +11,9 @@ GameObject:
   - component: {fileID: 4507344181799946393}
   - component: {fileID: 105296046}
   - component: {fileID: 105296047}
-  - component: {fileID: 105296044}
   - component: {fileID: 4507344183315734400}
+  - component: {fileID: 105296044}
+  - component: {fileID: 4458311068297311308}
   m_Layer: 0
   m_Name: Rocket
   m_TagString: Untagged
@@ -65,22 +66,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.5134258, y: 2.0200036, z: 0.5074762}
   m_Center: {x: 0.0028505325, y: 0.013234019, z: 0.0062783062}
---- !u!114 &105296044
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4507344181799946392}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 10d3443300bba5f4285f30905b8725f5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  thrustSound: {fileID: 4507344183315734400}
-  rigidBody: {fileID: 105296046}
-  mainThrust: 500
-  rotationValue: 50
 --- !u!82 &4507344183315734400
 AudioSource:
   m_ObjectHideFlags: 0
@@ -177,6 +162,34 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &105296044
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4507344181799946392}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10d3443300bba5f4285f30905b8725f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  thrustSound: {fileID: 4507344183315734400}
+  rigidBody: {fileID: 105296046}
+  mainThrust: 500
+  rotationValue: 50
+--- !u!114 &4458311068297311308
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4507344181799946392}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d74b0e3f95c2817498c759348261fcdc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4507344183111721056
 GameObject:
   m_ObjectHideFlags: 0
