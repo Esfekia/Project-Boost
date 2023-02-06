@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class CollisionHandler : MonoBehaviour
 {
+    public float delayInSeconds = 1.0f;
     void OnCollisionEnter(Collision collision)
     {
         switch (collision.gameObject.tag)
@@ -15,19 +16,21 @@ public class CollisionHandler : MonoBehaviour
             case "Finish":
                 print("Finished");
                 //Load next scene
-                LoadNextScene();
+                Invoke("LoadNextScene", delayInSeconds);
                 break;
             case "Fuel":
                 print("Fuel up!");
                 break;
             default:
-                print("Dead");
-                //Reload current scene
-                ReloadScene();
+                StartCrashSequence();
                 break;
         }
     }
-
+    void StartCrashSequence()
+    {
+        GetComponent<Movement>().enabled = false;
+        Invoke("ReloadScene",delayInSeconds);
+    }
     private void ReloadScene()
     {
         // Reload current scene
