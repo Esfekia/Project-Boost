@@ -208,12 +208,42 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1614272079516786449, guid: e70e6ec3fd7ecb84ba8a0c5b4fb37afd, type: 3}
+      propertyPath: crashSound
+      value: 
+      objectReference: {fileID: 8300000, guid: c482519c9c496bf40bed7b72e4cca8c5, type: 3}
+    - target: {fileID: 1614272079516786449, guid: e70e6ec3fd7ecb84ba8a0c5b4fb37afd, type: 3}
+      propertyPath: landedSound
+      value: 
+      objectReference: {fileID: 8300000, guid: c8c1ea0f2511b684589693e3885ca05f, type: 3}
+    - target: {fileID: 1614272079516786454, guid: e70e6ec3fd7ecb84ba8a0c5b4fb37afd, type: 3}
+      propertyPath: rigidBody
+      value: 
+      objectReference: {fileID: 244116652}
+    - target: {fileID: 1614272079516786454, guid: e70e6ec3fd7ecb84ba8a0c5b4fb37afd, type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 244116653}
+    - target: {fileID: 1614272079516786454, guid: e70e6ec3fd7ecb84ba8a0c5b4fb37afd, type: 3}
+      propertyPath: thrustSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 5a9db29264b9c224ca1ab2b6e1271d7c, type: 3}
     - target: {fileID: 1614272079516786455, guid: e70e6ec3fd7ecb84ba8a0c5b4fb37afd, type: 3}
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e70e6ec3fd7ecb84ba8a0c5b4fb37afd, type: 3}
+--- !u!54 &244116652 stripped
+Rigidbody:
+  m_CorrespondingSourceObject: {fileID: 1614272079516786450, guid: e70e6ec3fd7ecb84ba8a0c5b4fb37afd, type: 3}
+  m_PrefabInstance: {fileID: 244116651}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &244116653 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 1614272079516786451, guid: e70e6ec3fd7ecb84ba8a0c5b4fb37afd, type: 3}
+  m_PrefabInstance: {fileID: 244116651}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &388668867
 GameObject:
   m_ObjectHideFlags: 0

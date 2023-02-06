@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
-    public AudioSource thrustSound;
+    public AudioSource audioSource;
+    public AudioClip thrustSound;
     public Rigidbody rigidBody;
     public float mainThrust = 500.0f;
     public float rotationValue = 50.0f;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -26,14 +28,14 @@ public class Movement : MonoBehaviour
         if (Input.GetKey(KeyCode.Space))
         {
             rigidBody.AddRelativeForce(Vector3.up * mainThrust * Time.deltaTime);
-            if (!thrustSound.isPlaying)
+            if (!audioSource.isPlaying)
             {
-                thrustSound.Play();                
+                audioSource.PlayOneShot(thrustSound, 1);                
             }
         }
         else
         {
-            thrustSound.Stop();
+            audioSource.Stop();
         }
     }
 

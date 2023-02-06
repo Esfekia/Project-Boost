@@ -5,21 +5,27 @@ using UnityEngine.SceneManagement;
 
 public class CollisionHandler : MonoBehaviour
 {
+    AudioSource audioSource;
+    public AudioClip crashSound;
+    public AudioClip landedSound;
+
     public float delayInSeconds = 1.0f;
+    private void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
+
     void OnCollisionEnter(Collision collision)
     {
         switch (collision.gameObject.tag)
         {
-            case "Friendly":
-                print("OK");
+            case "Friendly":                
                 break;
-            case "Finish":
-                print("Finished");
+            case "Finish":                
                 //Load next scene
                 StartNextLevelSequence();
                 break;
-            case "Fuel":
-                print("Fuel up!");
+            case "Fuel":                
                 break;
             default:
                 StartCrashSequence();
@@ -29,6 +35,7 @@ public class CollisionHandler : MonoBehaviour
     void StartCrashSequence()
     {
         // add sfx upon crash
+        audioSource.PlayOneShot(crashSound, 1);
         // add particle effect upon crash
         GetComponent<Movement>().enabled = false;
         Invoke("ReloadScene",delayInSeconds);
@@ -36,6 +43,8 @@ public class CollisionHandler : MonoBehaviour
     
     void StartNextLevelSequence()
     {
+        // add sfx upon landing
+        audioSource.PlayOneShot(landedSound, 1);
         GetComponent<Movement>().enabled = false;
         Invoke("LoadNextScene", delayInSeconds);
     }
