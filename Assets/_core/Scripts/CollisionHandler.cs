@@ -16,7 +16,7 @@ public class CollisionHandler : MonoBehaviour
             case "Finish":
                 print("Finished");
                 //Load next scene
-                Invoke("LoadNextScene", delayInSeconds);
+                StartNextLevelSequence();
                 break;
             case "Fuel":
                 print("Fuel up!");
@@ -28,8 +28,16 @@ public class CollisionHandler : MonoBehaviour
     }
     void StartCrashSequence()
     {
+        // add sfx upon crash
+        // add particle effect upon crash
         GetComponent<Movement>().enabled = false;
         Invoke("ReloadScene",delayInSeconds);
+    }
+    
+    void StartNextLevelSequence()
+    {
+        GetComponent<Movement>().enabled = false;
+        Invoke("LoadNextScene", delayInSeconds);
     }
     private void ReloadScene()
     {

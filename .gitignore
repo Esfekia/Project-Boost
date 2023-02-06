@@ -9,6 +9,7 @@
 /[Bb]uilds/
 /[Ll]ogs/
 /[Mm]emoryCaptures/
+/[Aa]ssets/PolygonSciFiSpace
 
 # Asset meta data should only be ignored when the corresponding asset is also ignored
 !/[Aa]ssets/**/*.meta
@@ -58,3 +59,5 @@ sysinfo.txt
 # Crashlytics generated file
 crashlytics-build.properties
 
+Assets/PolygonSciFiSpace/Textures/PolygonSciFiSpace_Signs_Texture_01_E.png.meta
+Assets/PolygonSciFiSpace/Textures/PolygonSciFiSpace_Signs_Texture_01_D.png.meta
