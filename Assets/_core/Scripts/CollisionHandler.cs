@@ -10,9 +10,15 @@ public class CollisionHandler : MonoBehaviour
     public AudioClip landedSound;
 
     public float delayInSeconds = 1.0f;
+    bool inTransition = false;
+
     private void Start()
     {
         audioSource = GetComponent<AudioSource>();
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        StartNextLevelSequence();
     }
 
     void OnCollisionEnter(Collision collision)
@@ -34,8 +40,15 @@ public class CollisionHandler : MonoBehaviour
     }
     void StartCrashSequence()
     {
-        // add sfx upon crash
-        audioSource.PlayOneShot(crashSound, 1);
+        if (!inTransition)
+        {
+            // add sfx upon crash
+            audioSource.Stop();
+            audioSource.PlayOneShot(crashSound, 1);            
+            inTransition = true;
+        }
+        
+        
         // add particle effect upon crash
         GetComponent<Movement>().enabled = false;
         Invoke("ReloadScene",delayInSeconds);
@@ -43,8 +56,12 @@ public class CollisionHandler : MonoBehaviour
     
     void StartNextLevelSequence()
     {
-        // add sfx upon landing
-        audioSource.PlayOneShot(landedSound, 1);
+        if (!inTransition)
+        {   // add sfx upon landing
+            audioSource.Stop();
+            audioSource.PlayOneShot(landedSound, 1);            
+            inTransition = true;
+        }
         GetComponent<Movement>().enabled = false;
         Invoke("LoadNextScene", delayInSeconds);
     }
