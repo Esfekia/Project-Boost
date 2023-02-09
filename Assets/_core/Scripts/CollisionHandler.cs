@@ -62,8 +62,7 @@ public class CollisionHandler : MonoBehaviour
     {
         if (!inTransition)
         {
-
-
+            StopGameObjectMovement();
             hexagonParticles.Play();
             healParticles.Play();
             audioSource.Stop();
@@ -90,6 +89,16 @@ public class CollisionHandler : MonoBehaviour
             nextSceneIndex = 0; // Loop back to start
         }
         SceneManager.LoadScene(nextSceneIndex);
+    }
+    
+    private void StopGameObjectMovement()
+    {
+        {
+            // Stop Gameobject movement
+            GetComponent<Rigidbody>().velocity = Vector3.zero;
+            GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
+            GetComponent<Rigidbody>().useGravity = false;
+        }
     }
     
 }

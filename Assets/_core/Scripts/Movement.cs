@@ -42,6 +42,7 @@ public class Movement : MonoBehaviour
         else
         {
             audioSource.Stop();
+            afterBurner.Stop();
         }
     }
 
@@ -51,12 +52,25 @@ public class Movement : MonoBehaviour
         {
             // Rotate Gameobject around its Z axis positively
             ApplyRotation(rotationValue);
+            if (!rightBooster.isPlaying)
+            {
+                rightBooster.Play();
+            }
 
         }
         else if (Input.GetKey(KeyCode.D))
         {
             // Rotate Gameobject around its Z axis negatively
             ApplyRotation(-rotationValue);
+            if (!leftBooster.isPlaying)
+            {
+                leftBooster.Play();
+            }
+        }
+        else
+        {
+            leftBooster.Stop();
+            rightBooster.Stop();
         }
     }
 

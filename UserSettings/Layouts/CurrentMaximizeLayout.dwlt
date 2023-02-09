@@ -24,7 +24,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 10805
+  controlID: 23605
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -141,7 +141,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 200}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
-  controlID: 10806
+  controlID: 23606
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -166,7 +166,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 10755
+  controlID: 23607
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -223,10 +223,10 @@ MonoBehaviour:
     m_SaveData: []
   m_SceneHierarchy:
     m_TreeViewState:
-      scrollPos: {x: 0, y: 29.200012}
+      scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: c8f7ffff0efbffff30fbffff32fbfffff8680000
+      m_ExpandedIDs: d6f6ffffc8f7ffff0efbffff30fbffff32fbffffb2680000f8680000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -536,9 +536,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -9.958356, y: 10.479424, z: -12.322772}
+    m_Target: {x: 10.533802, y: 6.8718977, z: -5.220056}
     speed: 2
-    m_Value: {x: -9.958356, y: 10.479424, z: -12.322772}
+    m_Value: {x: 10.533802, y: 6.8718977, z: -5.220056}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -585,13 +585,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.474
   m_Rotation:
-    m_Target: {x: -0.11999044, y: 0.019231077, z: -0.002313017, w: -0.9926063}
+    m_Target: {x: -0.20284939, y: 0.018970659, z: -0.00391233, w: -0.9790435}
     speed: 2
-    m_Value: {x: -0.11998803, y: 0.019230692, z: -0.0023129706, w: -0.9925864}
+    m_Value: {x: -0.20284441, y: 0.018970193, z: -0.003912234, w: -0.97901946}
   m_Size:
-    m_Target: 0.00830444
+    m_Target: 0.0018170641
     speed: 2
-    m_Value: 0.00830444
+    m_Value: 0.0018170641
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -712,22 +712,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Asset Packs/PolygonFantasyCharacters/Prefabs/Sertac
+    - Assets/PolygonSciFiSpace/Prefabs/Props
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 96
   m_LastFolders:
-  - Assets/Asset Packs/PolygonFantasyCharacters/Prefabs/Sertac
+  - Assets/PolygonSciFiSpace/Prefabs/Props
   m_LastFoldersGridSize: 96
   m_LastProjectPath: Z:\Unity\GitTracked\Project-Boost
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: fc970000
-    m_LastClickedID: 38908
-    m_ExpandedIDs: 00000000d46f0000d66f0000d86f0000da6f0000dc6f0000ee970000f49700000a98000000ca9a3b
+    scrollPos: {x: 0, y: 131}
+    m_SelectedIDs: b8ea0000
+    m_LastClickedID: 60088
+    m_ExpandedIDs: 00000000d26f0000d46f0000d66f0000d86f0000da6f0000dc6f0000c6710000ee97000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
