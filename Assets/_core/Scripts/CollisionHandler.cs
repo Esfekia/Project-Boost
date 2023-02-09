@@ -9,7 +9,9 @@ public class CollisionHandler : MonoBehaviour
     public AudioClip crashSound;
     public AudioClip landedSound;
 
-    public GameObject explosion;
+    public ParticleSystem explosionParticles;
+    public ParticleSystem hexagonParticles;
+    public ParticleSystem healParticles;
 
     public float delayInSeconds = 1.0f;
     bool inTransition = false;
@@ -44,7 +46,7 @@ public class CollisionHandler : MonoBehaviour
     {
         if (!inTransition)
         {
-            explosion.SetActive(true);
+            explosionParticles.Play();
             audioSource.Stop();
             audioSource.PlayOneShot(crashSound, 1);            
             inTransition = true;
@@ -60,9 +62,10 @@ public class CollisionHandler : MonoBehaviour
     {
         if (!inTransition)
         {
-            
-            
-            // add sfx upon landing
+
+
+            hexagonParticles.Play();
+            healParticles.Play();
             audioSource.Stop();
             audioSource.PlayOneShot(landedSound, 1);            
             inTransition = true;

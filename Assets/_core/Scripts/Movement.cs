@@ -8,9 +8,9 @@ public class Movement : MonoBehaviour
     public AudioClip thrustSound;
     public Rigidbody rigidBody;
 
-    public GameObject afterBurner;
-    public GameObject leftBooster;
-    public GameObject rightBooster;
+    public ParticleSystem afterBurner;
+    public ParticleSystem leftBooster;
+    public ParticleSystem rightBooster;
 
     public float mainThrust = 500.0f;
     public float rotationValue = 50.0f;
@@ -35,7 +35,7 @@ public class Movement : MonoBehaviour
             rigidBody.AddRelativeForce(Vector3.up * mainThrust * Time.deltaTime);
             if (!audioSource.isPlaying)
             {
-                afterBurner.SetActive(true);
+                afterBurner.Play();
                 audioSource.PlayOneShot(thrustSound, 1);                
             }
         }
