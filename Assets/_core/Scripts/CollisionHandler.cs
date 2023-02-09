@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class CollisionHandler : MonoBehaviour
 {
+    public bool collisionDisable = false;
+
     AudioSource audioSource;
     public AudioClip crashSound;
     public AudioClip landedSound;
@@ -19,6 +21,13 @@ public class CollisionHandler : MonoBehaviour
     private void Start()
     {
         audioSource = GetComponent<AudioSource>();
+
+    }
+
+    private void Update()
+    {
+        DebugLoadNextLevel();
+        DebugDisableCollisions();        
     }
     private void OnTriggerEnter(Collider other)
     {
@@ -27,20 +36,24 @@ public class CollisionHandler : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
-        switch (collision.gameObject.tag)
+        if (!collisionDisable)
         {
-            case "Friendly":                
-                break;
-            case "Finish":                
-                //Load next scene
-                StartNextLevelSequence();
-                break;
-            case "Fuel":                
-                break;
-            default:
-                StartCrashSequence();
-                break;
+            switch (collision.gameObject.tag)
+            {
+                case "Friendly":
+                    break;
+                case "Finish":
+                    //Load next scene
+                    StartNextLevelSequence();
+                    break;
+                case "Fuel":
+                    break;
+                default:
+                    StartCrashSequence();
+                    break;
+            }
         }
+        
     }
     void StartCrashSequence()
     {
@@ -58,7 +71,7 @@ public class CollisionHandler : MonoBehaviour
         Invoke("ReloadScene",delayInSeconds);
     }
     
-    void StartNextLevelSequence()
+    public void StartNextLevelSequence()
     {
         if (!inTransition)
         {
@@ -100,5 +113,22 @@ public class CollisionHandler : MonoBehaviour
             GetComponent<Rigidbody>().useGravity = false;
         }
     }
-    
+
+    private void DebugDisableCollisions()
+    {
+        if (Input.GetKeyDown(KeyCode.C))
+        {
+            Debug.Log("Switching collision for debug mode..");
+            collisionDisable = !collisionDisable;
+        }
+    }
+    private void DebugLoadNextLevel()
+    {
+        if (Input.GetKeyDown(KeyCode.L))
+        {
+            Debug.Log("Loading next level for debug mode..");
+            StartNextLevelSequence();
+        }
+    }
+
 }

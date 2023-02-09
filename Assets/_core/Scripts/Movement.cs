@@ -32,12 +32,7 @@ public class Movement : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.Space))
         {
-            rigidBody.AddRelativeForce(Vector3.up * mainThrust * Time.deltaTime);
-            if (!audioSource.isPlaying)
-            {
-                afterBurner.Play();
-                audioSource.PlayOneShot(thrustSound, 1);                
-            }
+            StartThrusting();
         }
         else
         {
@@ -50,27 +45,47 @@ public class Movement : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.A))
         {
-            // Rotate Gameobject around its Z axis positively
-            ApplyRotation(rotationValue);
-            if (!rightBooster.isPlaying)
-            {
-                rightBooster.Play();
-            }
+            RotateLeft();
 
         }
         else if (Input.GetKey(KeyCode.D))
         {
-            // Rotate Gameobject around its Z axis negatively
-            ApplyRotation(-rotationValue);
-            if (!leftBooster.isPlaying)
-            {
-                leftBooster.Play();
-            }
+            RotateRight();
         }
         else
         {
             leftBooster.Stop();
             rightBooster.Stop();
+        }
+    }
+
+    private void StartThrusting()
+    {
+        rigidBody.AddRelativeForce(Vector3.up * mainThrust * Time.deltaTime);
+        if (!audioSource.isPlaying)
+        {
+            afterBurner.Play();
+            audioSource.PlayOneShot(thrustSound, 1);
+        }
+    }    
+
+    private void RotateRight()
+    {
+        // Rotate Gameobject around its Z axis negatively
+        ApplyRotation(-rotationValue);
+        if (!leftBooster.isPlaying)
+        {
+            leftBooster.Play();
+        }
+    }
+
+    private void RotateLeft()
+    {
+        // Rotate Gameobject around its Z axis positively
+        ApplyRotation(rotationValue);
+        if (!rightBooster.isPlaying)
+        {
+            rightBooster.Play();
         }
     }
 
