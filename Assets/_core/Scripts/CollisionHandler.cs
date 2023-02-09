@@ -9,6 +9,8 @@ public class CollisionHandler : MonoBehaviour
     public AudioClip crashSound;
     public AudioClip landedSound;
 
+    public GameObject explosion;
+
     public float delayInSeconds = 1.0f;
     bool inTransition = false;
 
@@ -42,7 +44,7 @@ public class CollisionHandler : MonoBehaviour
     {
         if (!inTransition)
         {
-            // add sfx upon crash
+            explosion.SetActive(true);
             audioSource.Stop();
             audioSource.PlayOneShot(crashSound, 1);            
             inTransition = true;
@@ -57,7 +59,10 @@ public class CollisionHandler : MonoBehaviour
     void StartNextLevelSequence()
     {
         if (!inTransition)
-        {   // add sfx upon landing
+        {
+            
+            
+            // add sfx upon landing
             audioSource.Stop();
             audioSource.PlayOneShot(landedSound, 1);            
             inTransition = true;
@@ -83,4 +88,5 @@ public class CollisionHandler : MonoBehaviour
         }
         SceneManager.LoadScene(nextSceneIndex);
     }
+    
 }
