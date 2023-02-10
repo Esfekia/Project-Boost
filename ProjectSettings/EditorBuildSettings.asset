@@ -6,9 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/_core/Scenes/Fly Over.unity
+    path: Assets/_core/Scenes/Level1.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
-  - enabled: 1
+  - enabled: 0
     path: Assets/_core/Scenes/Fly Under.unity
     guid: 8692ffac005e90b4e9a830168d5d4f68
+  - enabled: 1
+    path: Assets/_core/Scenes/Level2.unity
+    guid: 553a96d53f4d60c47aeb66e4200d7155
   m_configObjects: {}

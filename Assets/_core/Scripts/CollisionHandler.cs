@@ -29,9 +29,20 @@ public class CollisionHandler : MonoBehaviour
         DebugLoadNextLevel();
         DebugDisableCollisions();        
     }
+
+    private void OnParticleCollision(GameObject other)
+    {
+        Debug.Log("Collided With Laser!");
+        StartCrashSequence();
+    }
     private void OnTriggerEnter(Collider other)
     {
-        StartNextLevelSequence();
+        // Check if tag is finish
+        if (other.gameObject.tag == "Finish")
+        {
+            StartNextLevelSequence();
+        }   
+        
     }
 
     void OnCollisionEnter(Collision collision)
@@ -40,9 +51,12 @@ public class CollisionHandler : MonoBehaviour
         {
             switch (collision.gameObject.tag)
             {
-                case "Friendly":
+                case "Friendly":                    
+                    break;
+                case "Triggerer":
                     break;
                 case "Finish":
+                    Debug.Log("Finish");
                     //Load next scene
                     StartNextLevelSequence();
                     break;
